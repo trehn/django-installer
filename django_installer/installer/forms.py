@@ -17,10 +17,12 @@ def get_option(settings, section, option):
 
 
 class BaseURLForm(forms.Form):
+    title = _("Base URL")
+
     url = forms.URLField(
         help_text=_("The absolute URL this application will be served at."),
         initial="https://example.com",
-        label=_("Base URL"),
+        label=_("URL"),
     )
 
     def populate_from_settings(self, settings):
@@ -32,6 +34,8 @@ class BaseURLForm(forms.Form):
 
 
 class DatabaseForm(forms.Form):
+    title = _("Database")
+
     engine = forms.ChoiceField(
         choices=(
             ('django.db.backends.mysql', _("MySQL")),

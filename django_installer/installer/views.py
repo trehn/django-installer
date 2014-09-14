@@ -55,6 +55,7 @@ def installer(request):
         "installer.html",
         {
             'forms': context_forms,
+            'title': config['title'],
         }
     )
     return HttpResponse(repr(config))

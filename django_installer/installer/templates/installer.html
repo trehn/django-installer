@@ -1,9 +1,11 @@
 {% load i18n %}
 <html>
 <body>
+	<h1>{% blocktrans %}Setup {{ title }}{% endblocktrans %}</h1>
 	<form method="POST">
 		{% csrf_token %}
 		{% for form in forms %}
+		<h2>{{ form.title }}</h2>
 		<table>
 			{{ form.as_table }}
 		</table>
