@@ -26,6 +26,7 @@ from django_installer import run_installer
 
 def installer():
 	run_installer(
+		"YourApp 1.0",
 		allowed_settings=['base_url', 'database'],
 		settings_path="/etc/yourapp.conf",
 	)
